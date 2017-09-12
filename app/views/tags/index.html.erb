@@ -2,7 +2,10 @@
 
 <div class="title-container">
   <%if current_user.isGeneralAdmin or current_user.isDepartmentAdmin %>
-    <button class="botonCrear waves-effect waves-light btn"><%= link_to 'Nueva', new_tag_path %></button>
+    <%= link_to new_tag_path do %>
+      <%= content_tag :button, "Nueva", :class => "botonCrear waves-effect waves-light btn" %>
+    <% end %>
+    <!-- <button class="botonCrear waves-effect waves-light btn"></button> -->
   <% end %>
   <h3>Tags</h3>
 

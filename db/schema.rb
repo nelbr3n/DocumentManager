@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806222141) do
+ActiveRecord::Schema.define(version: 20170912040033) do
 
   create_table "archives", force: :cascade do |t|
     t.integer  "document_id"
@@ -67,8 +67,14 @@ ActiveRecord::Schema.define(version: 20170806222141) do
     t.index ["document_id"], name: "index_images_on_document_id"
   end
 
+  create_table "positions", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "statuses", force: :cascade do |t|
-    t.string   "description"
+    t.string   "title"
     t.integer  "department_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -87,7 +93,6 @@ ActiveRecord::Schema.define(version: 20170806222141) do
     t.string   "password"
     t.string   "username",                            null: false
     t.integer  "department_id",                       null: false
-    t.string   "position"
     t.boolean  "isGeneralAdmin"
     t.boolean  "isDepartmentAdmin"
     t.datetime "created_at",                          null: false
@@ -101,8 +106,10 @@ ActiveRecord::Schema.define(version: 20170806222141) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "position_id"
     t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["position_id"], name: "index_users_on_position_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

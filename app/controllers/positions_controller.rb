@@ -1,0 +1,24 @@
+class PositionsController < ApplicationController
+    def index
+        @positions = Position.all
+    end
+
+    def new
+        @position = Position.new
+    end
+
+    def create
+        @position = Position.new(article_params)
+        @position.save
+        redirect_to @position
+    end
+
+    def show
+        @position = Position.find(params[:id])
+    end
+
+    def article_params
+        params.require(:position).permit(:title)
+    end
+
+end
