@@ -87,7 +87,7 @@
             <div class="input-field showInput">
               <label for="senderStatus">Estado remitente:</label>
               <br>
-              <%=f.select :senderStatus_id, @statusesSender.map{|s| [s.description,s.id]}%>
+              <%=f.select :senderStatus_id, @statusesSender.map{|s| [s.title,s.id]}%>
             </div>
           </td>
           <td>
@@ -103,7 +103,7 @@
   <% else %>
     <p>
       <strong class="documentLabel">Estado remitente:</strong>
-      <%= @document.senderStatus.description %>
+      <%= @document.senderStatus.title %>
     </p>
   <% end %>
   <% if @canUpdateReceiverStatus %>
@@ -114,7 +114,7 @@
             <div class="input-field showInput ">
               <label for="senderStatus">Estado destinatario:</label>
               <br>
-              <%=f.select :receiverStatus_id, @statusesReceiver.map{|s| [s.description,s.id]}%>
+              <%=f.select :receiverStatus_id, @statusesReceiver.map{|s| [s.title,s.id]}%>
             </div>
           </td>
           <td>
@@ -130,7 +130,7 @@
   <% else %>
    <p>
     <strong class="documentLabel">Estado destinatario:</strong>
-    <%= @document.receiverStatus.description %>
+    <%= @document.receiverStatus.title %>
     </p>
   <% end %>
   
@@ -205,7 +205,7 @@
 
   <p>
     <strong>Senderstatus:</strong>
-    <%= @document.senderStatus.description %>
+    <%= @document.senderStatus.title %>
   </p>
 
   <p>
@@ -215,7 +215,7 @@
 
   <p>
     <strong>Receiverstatus:</strong>
-    <%= @document.receiverStatus.description %>
+    <%= @document.receiverStatus.title %>
   </p>-->
     
   

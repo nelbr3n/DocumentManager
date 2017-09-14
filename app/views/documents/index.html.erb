@@ -47,8 +47,8 @@
           <td><%= document.content %></td>
           <td><%= document.tags %></td>
           <td><%= document.conversationId %></td>
-          <td><%= document.senderStatus.description %></td>
-          <td><%= document.receiverStatus.description %></td>
+          <td><%= document.senderStatus.title %></td>
+          <td><%= document.receiverStatus.title %></td>
           <td><%= link_to 'Show', document %></td>
           <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

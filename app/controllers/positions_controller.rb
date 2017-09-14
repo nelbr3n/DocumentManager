@@ -9,8 +9,9 @@ class PositionsController < ApplicationController
 
     def create
         @position = Position.new(article_params)
-        @position.save
-        redirect_to @position
+        if @position.save
+            redirect_to @position
+        end
     end
 
     def show
