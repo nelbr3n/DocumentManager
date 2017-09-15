@@ -72,7 +72,7 @@ class DocumentsController < ApplicationController
     if !@documents.count 
       @document.conversationId = 1
     end
-    @receiverStatus = Status.where(department_id: User.find(@document.receiver_id).department_id, description: "Nuevo")
+    @receiverStatus = Status.where(department_id: User.find(@document.receiver_id).department_id)
     if(@receiverStatus != nil && @receiverStatus != 0) 
       @document.receiverStatus_id = @receiverStatus[0].id
     end
