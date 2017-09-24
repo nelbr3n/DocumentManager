@@ -24,14 +24,14 @@
         <%= f.label :department_id, "Departamento"%><br />
         <br />
         <br />
-        <%= f.select :department_id, @departments.map{|d| [d.departmentName,d.id]}
+        <%= f.select :department_id, @departments.map{|d| [d.departmentName,d.id]}, :prompt => true
     %>
         <br>
       </div>
       <div class="input-field col s3">
         <i class="material-icons login-icons prefix">supervisor_account</i>
         <%= f.label :position,"Puesto" %><br />
-        <%= f.select :position_id, @positions.map{|d| [d.title,d.id]} %>
+        <%= f.select :position_id, @positions.map{|d| [d.title,d.id]}, :prompt => true %>
       </div>
       <div class="input-field col s3">
         <i class="material-icons login-icons prefix">lock</i>
