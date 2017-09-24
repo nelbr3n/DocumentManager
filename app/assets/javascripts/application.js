@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets 
 //= require jquery_ujs
+//= require wice_grid
+//= require materialize-sprockets 
 //= require turbolinks
 //= require_tree .
 //= require toastr_rails

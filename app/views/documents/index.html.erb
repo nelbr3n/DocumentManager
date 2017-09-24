@@ -1,8 +1,50 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
-<h1>Documents</h1>
+<h3><%= current_user.department.departmentName.capitalize %> Documents</h3>
 
-<table>
+<%= grid(@documents) do |g|
+
+  g.column name: 'Document Code'  do |document|
+    document.documentCode
+  end
+
+  g.column name: 'Sender Email' do |document|
+    document.isSenderPrivate && current_user.email != document.sender.email ? "Privado" : document.sender.email
+  end
+
+  g.column name: 'Receiver Email' do |document|
+    document.isReceiverPrivate && current_user.email != document.receiver.email ? "Privado" : document.receiver.email
+  end
+
+  g.column name: 'Creator Email' do |document|
+    document.creator.email
+  end
+
+  g.column name: 'Subject' do |document|
+    document.subject
+  end
+
+  g.column name: 'Sender Status' do |document|
+  document.senderStatus.id
+end
+
+g.column name: 'Receiver Status' do |document|
+document.receiverStatus.id
+end
+
+  g.column name: 'Date' do |document|
+    document.date
+  end
+
+  g.column do |document|
+    link_to('Show', document)
+  end
+
+end -%>
+
+  <!-- <table>
   <thead>
     <tr>
       <th>ID</th>
@@ -55,8 +97,8 @@
       <% end %>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+  <br>
 
-<%= link_to 'New Document', new_document_path({:conversationId => getNextConvID()}) %>
+  <%= link_to 'New Document', new_document_path({:conversationId => getNextConvID()}) %>

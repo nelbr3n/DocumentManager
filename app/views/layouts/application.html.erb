@@ -23,23 +23,17 @@
             </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <% if current_user.isGeneralAdmin? %>
                 <li><%= link_to "Dashboard", root_path %></li>
+                <li><%= link_to "Documentos", documents_path %></li>
+                <li><%= link_to "Tags", tags_path %></li>
+                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
+              <% if current_user.isGeneralAdmin? %>
                 <li><%= link_to "Departamentos", departments_path %></li>
                 <li><%= link_to "Estados", statuses_path %></li>
                 <li><%= link_to "Usuarios", users_path %></li>
-                <li><%= link_to "Tags", tags_path %></li>
-                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
               <% elsif current_user.isDepartmentAdmin? %>
-                <li><%= link_to "Dashboard", root_path %></li>
                 <li><%= link_to "Departamentos", departments_path %></li>
                 <li><%= link_to "Estados", statuses_path %></li>
-                <li><%= link_to "Tags", tags_path %></li>
-                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
-              <% else %>
-                <li><%= link_to "Dashboard", root_path %></li>
-                <li><%= link_to "Tags", tags_path %></li>
-                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
               <% end %>
               <li><a class="dropdown-button" data-activates="dropdown1"> <%= current_user.email %><i style="margin-top:-25px;"class="material-icons right">arrow_drop_down</i></a></li>
               <ul id="dropdown1" class="dropdown-content">
