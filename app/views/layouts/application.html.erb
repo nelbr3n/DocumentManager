@@ -24,8 +24,9 @@
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><%= link_to "Dashboard", root_path %></li>
-                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
+                <li><%= link_to "Documentos", documents_path %></li>
                 <li><%= link_to "Tags", tags_path %></li>
+                <li><%= link_to 'Nuevo Documento', new_document_path({:conversationId => getNextConvID()}) %></li>
               <% if current_user.isGeneralAdmin? %>
                 <li><%= link_to "Departamentos", departments_path %></li>
                 <li><%= link_to "Estados", statuses_path %></li>
