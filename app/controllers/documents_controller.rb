@@ -58,7 +58,7 @@ class DocumentsController < ApplicationController
         @departmentReceiver.push([s.departmentName,s.department_id])
       end
     }
-    
+
   end
 
   # GET /documents/1/edit
@@ -71,15 +71,15 @@ class DocumentsController < ApplicationController
     @documents = Document.all
     @document = Document.new(document_params)
 
-    if !@documents.count 
+    if !@documents.count
       @document.conversationId = 1
     end
     @receiverStatus = Status.where(department_id: User.find(@document.receiver_id).department_id)
-    if(@receiverStatus != nil && @receiverStatus != 0) 
+    if(@receiverStatus != nil && @receiverStatus != 0)
       @document.receiverStatus_id = @receiverStatus[0].id
     end
     respond_to do |format|
-      if @document.receiver_id != @document.sender_id 
+      if @document.receiver_id != @document.sender_id
         if @document.save
           if params[:document][:archive_data] != nil
             params[:document][:archive_data].each do |file|
@@ -114,7 +114,7 @@ class DocumentsController < ApplicationController
               #@departmentReceiver.push([s.departmentName,s.department_id])
             end
           }
-          end  
+          end
       else#el usuario que envia es el mismo que recibe
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }
@@ -143,7 +143,7 @@ class DocumentsController < ApplicationController
         }
       end
       ##nuevo
-      
+
     end
   end
 
@@ -197,6 +197,6 @@ class DocumentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def document_params
-    params.require(:document).permit(:documentCode, :sender_id, :receiver_id, :creator_id, :subject, :date, :content, :conversationId, :isSenderPrivate, :senderStatus_id, :isReceiverPrivate, :receiverStatus_id, :picture, tag_ids:[], :archive_data => [])
+    params.require(:document).permit(:documentCode, :sender_id, :receiver_id, :creator_id, :puesto,:subject, :date, :content, :conversationId, :isSenderPrivate, :senderStatus_id, :isReceiverPrivate, :receiverStatus_id, :picture, tag_ids:[], :archive_data => [])
   end
 end
