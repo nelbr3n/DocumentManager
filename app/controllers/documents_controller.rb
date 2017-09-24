@@ -4,7 +4,9 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    @users = User.where("department_id = ?", current_user.department_id).pluck(:id)
+    @documents_grid = Document.where("receiver_id = ? OR sender_id = ? OR (receiver_id = ? AND isReceiverPrivate = ?)", current_user.id, current_user.id,@user,false)
+    @documents =initialize_grid(@documents_grid)
   end
 
   # GET /documents/1
@@ -44,7 +46,7 @@ class DocumentsController < ApplicationController
     @usersReceiver.map{|u|
       if !addedIds.include?(u.department_id)
         addedIds.push(u.department_id)
-        @departmentReceiver.push([u.departmentName,u.department_id])
+        # @departmentReceiver.push([u.departmentName,u.department_id])
       end
     }
     gon.departmentReceiver = @departmentReceiver
@@ -53,7 +55,7 @@ class DocumentsController < ApplicationController
     @statusesReceiver.map{|s|
       if !addedIds2.include?(s.department_id)
         addedIds2.push(s.department_id)
-        #@departmentReceiver.push([s.departmentName,s.department_id])
+        @departmentReceiver.push([s.departmentName,s.department_id])
       end
     }
     
@@ -72,7 +74,7 @@ class DocumentsController < ApplicationController
     if !@documents.count 
       @document.conversationId = 1
     end
-    @receiverStatus = Status.where(department_id: User.find(@document.receiver_id).department_id, title: "Nuevo")
+    @receiverStatus = Status.where(department_id: User.find(@document.receiver_id).department_id)
     if(@receiverStatus != nil && @receiverStatus != 0) 
       @document.receiverStatus_id = @receiverStatus[0].id
     end

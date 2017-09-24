@@ -97,4 +97,6 @@ config.assets.digest = true
   
   Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
   Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
+
+  config.action_controller.permit_all_parameters = true
 end
