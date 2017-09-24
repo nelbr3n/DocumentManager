@@ -22,9 +22,9 @@
  											<i class="material-icons circle">folder</i>
  											<span class="title"><%=document.subject%></span><br>
  											<span>De: <%=User.find(document.sender_id).email %></span><br>
- 											<span>Estado Emisor: <%=Status.find(document.senderStatus_id).description %></span><br>
+ 											<span>Estado Emisor: <%=Status.find(document.senderStatus_id).title %></span><br>
  											<span>Para: <%=User.find(document.receiver_id).email %></span><br>
- 											<span>Estado Receptor: <%=Status.find(document.receiverStatus_id).description %></span><br><br>
+ 											<span>Estado Receptor: <%=Status.find(document.receiverStatus_id).title %></span><br><br>
  											<span><%=document.content%></span><br>
  											<button class="waves-effect waves-light btn-flat blueText"> <%= link_to 'Detalle', document %> </button>
 
@@ -42,9 +42,9 @@
  															<i class="material-icons circle">folder</i>
  															<span class="title"><%=document2.subject%></span><br>
  															<span>De: <%=User.find(document2.sender_id).email %></span><br>
- 															<span>Estado Emisor: <%=Status.find(document2.senderStatus_id).description %></span><br>
+ 															<span>Estado Emisor: <%=Status.find(document2.senderStatus_id).title %></span><br>
  															<span>Para: <%=User.find(document2.receiver_id).email %></span><br>
- 															<span>Estado Receptor: <%=Status.find(document2.receiverStatus_id).description %></span><br><br>
+ 															<span>Estado Receptor: <%=Status.find(document2.receiverStatus_id).title %></span><br><br>
  															<span><%=document2.content%></span><br>
  															<button class="waves-effect waves-light btn-flat blueText"> <%= link_to 'Detalle', document2 %> </button>
  															
