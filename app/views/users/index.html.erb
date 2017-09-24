@@ -25,7 +25,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= user.username %></td>
-          <td><%= user.position %></td>
+          <td><%= user.position.title %></td>
           <td><%= user.department.departmentName %>
             <td>
               <% if user.isGeneralAdmin? %>
