@@ -16,6 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @departments = Department.all
+    @positions = Position.all
   end
 
   # GET /users/1/edit
@@ -71,7 +72,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :username, :department_id, :position, :isGeneralAdmin, :isDepartmentAdmin)
+      params.require(:user).permit(:email, :password, :username, :department_id, :position_id, :isGeneralAdmin, :isDepartmentAdmin)
     end
  
 

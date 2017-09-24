@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="title-container">
-  <button class="botonCrear waves-effect waves-light btn"><%= link_to 'Nuevo', new_status_path %></button>
+  
+  <%= link_to new_status_path do %>
+    <%= content_tag :button, "Nuevo", :class => "botonCrear waves-effect waves-light btn" %>
+  <% end %>
   <h3>Estados</h3>
 
 </div>
@@ -10,7 +13,7 @@
       <% @statuses.each do |status| %>
       <div class="card statusDetail">
         <p class="p">
-        <%= status.description %> <br>
+        <%= status.title %> <br>
         Departamento: <%= status.department.departmentName %>
         </p>
         <!--<%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>-->
