@@ -1,0 +1,10 @@
+<%= form_for @position, url:{action: "create"} do |form| %>
+  <p>
+    <%= form.label :Posición %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.submit :Crear, :class => "botonCrear waves-effect waves-light btn" %> 
+  </p>
+<% end %>

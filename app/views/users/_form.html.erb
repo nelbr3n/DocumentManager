@@ -39,7 +39,7 @@
           <div class="row">
             <div class="field col s6">
               <%= f.label "Cargo" %>
-              <%= f.text_field :position, :disabled=> true  %>
+              <%= f.collection_select(:position_id, Position.all, :id, :title)  %>
             </div>
             <div class="field col s6" style="display: hidden;">
               <%= f.check_box :isGeneralAdmin, id:"isGeneralAdmin" %>
