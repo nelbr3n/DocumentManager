@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912040033) do
+ActiveRecord::Schema.define(version: 20170924225412) do
 
   create_table "archives", force: :cascade do |t|
     t.integer  "document_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170912040033) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "picture"
+    t.string   "puesto"
     t.index ["creator_id"], name: "index_documents_on_creator_id"
     t.index ["receiverStatus_id"], name: "index_documents_on_receiverStatus_id"
     t.index ["receiver_id"], name: "index_documents_on_receiver_id"
