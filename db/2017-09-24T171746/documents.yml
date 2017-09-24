@@ -1,0 +1,110 @@
+
+---
+documents:
+  columns:
+  - id
+  - documentCode
+  - subject
+  - date
+  - content
+  - tags
+  - conversationId
+  - isSenderPrivate
+  - isReceiverPrivate
+  - created_at
+  - updated_at
+  - sender_id
+  - receiver_id
+  - creator_id
+  - senderStatus_id
+  - receiverStatus_id
+  - picture_file_name
+  - picture_content_type
+  - picture_file_size
+  - picture_updated_at
+  - picture
+  records: 
+  - - 1
+    - adsadasd
+    - assad
+    - '2017-09-16'
+    - asestadas
+    - 
+    - 1
+    - true
+    - false
+    - '2017-09-15 00:07:35.441535'
+    - '2017-09-24 17:32:55.193354'
+    - 2
+    - 3
+    - 1
+    - 5
+    - 1
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 2
+    - asdsad
+    - adosadas
+    - '2017-09-15'
+    - adasdasd
+    - 
+    - 2
+    - false
+    - true
+    - '2017-09-15 00:12:27.997859'
+    - '2017-09-15 00:12:27.997859'
+    - 1
+    - 3
+    - 1
+    - 2
+    - 1
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 3
+    - ABC123
+    - asease
+    - '2017-09-14'
+    - assad
+    - 
+    - 3
+    - false
+    - false
+    - '2017-09-15 01:12:20.807304'
+    - '2017-09-15 01:12:20.807304'
+    - 1
+    - 2
+    - 1
+    - 2
+    - 2
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 4
+    - dasd
+    - dasdasd
+    - '2017-09-28'
+    - dsdasd
+    - 
+    - 1
+    - false
+    - false
+    - '2017-09-24 15:07:25.776021'
+    - '2017-09-24 15:07:25.776021'
+    - 3
+    - 2
+    - 3
+    - 1
+    - 2
+    - 
+    - 
+    - 
+    - 
+    - 
