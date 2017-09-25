@@ -10,4 +10,7 @@
 	</div>
 </div>
 
-<%= link_to 'Back', statuses_path %>
+<%= link_to statuses_path do %>
+	<%= content_tag :button, "Atras", :class => "botonCrear waves-effect waves-light btn" %>
+<% end %>
+

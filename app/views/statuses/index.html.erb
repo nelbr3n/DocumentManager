@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
-<div class="title-container">
-  
-  <%= link_to new_status_path do %>
-    <%= content_tag :button, "Nuevo", :class => "botonCrear waves-effect waves-light btn" %>
-  <% end %>
-  <h3>Estados</h3>
+
+<div class="specialdiv">
+    
+    <%= link_to new_status_path do %>
+      <%= content_tag :button, "Nuevo", :class => "botonCrear waves-effect waves-light btn" %>
+    <% end %>
+    <h3>Estados</h3> 
+    
+    <%= grid(@statuses) do |g|
+
+        g.column name: 'Nombre'  do |status|
+            status.title
+        end
+
+        g.column name: 'Departamento'  do |status|
+            status.department.departmentName
+        end
+     
+    end -%>
 
 </div>
-<div class="row">
-  <div class="col s12 m8 statusColumn">
-    
-      <% @statuses.each do |status| %>
-      <div class="card statusDetail">
-        <p class="p">
-        <%= status.title %> <br>
-        Departamento: <%= status.department.departmentName %>
-        </p>
-        <!--<%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-      </div>
-      <% end %>
-    
-  </div>
-
-</div>
-
-<br>
-
+<br><br><br>
 
