@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags_grid = Tag.all
+    @tags =initialize_grid(@tags_grid)
   end
 
   # GET /tags/1

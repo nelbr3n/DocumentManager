@@ -1,19 +1,26 @@
-<ul>
+<p id="notice">
+    <%= notice %>
+</p>
+  
+<h3>Posiciones</h3>
+
+<div class="specialdiv">
+    
     <%= link_to new_position_path do %>
         <%= content_tag :button, "Nuevo", :class => "botonCrear waves-effect waves-light btn" %>
     <% end %>
-    <h3>Posiciones</h3>
     
-    <div class="row">
-        <div class="col s12 m8 tagsColumn">
-            <% @positions.each do |position| %>
-                <div class="card positionDetail">
-                    <p class="p positionCenter">
-                        <br><%= position.title %> <br><br>
-                    </p>
-                </div>
-            <% end %>
-        </div>
-    </div>
-          
-</ul>
+    <%= grid(@positions) do |g|
+
+        g.column name: 'Titulo'  do |position|
+            position.title
+        end
+
+        g.column do |position|
+        link_to('Show', position)
+        end
+        
+    end -%>
+
+</div>
+<br><br><br>

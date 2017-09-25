@@ -4,7 +4,8 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all
+    @statuses_grid = Status.all
+    @statuses =initialize_grid(@statuses_grid)
   end
 
   # GET /statuses/1
