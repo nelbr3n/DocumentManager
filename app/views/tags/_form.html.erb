@@ -1,22 +1,22 @@
 <% if current_user.isDepartmentAdmin || current_user.isGeneralAdmin %>
 <%= form_for(tag) do |f| %>
   <% if tag.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
-
-      <ul>
-      <% tag.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <font color="red" size="1">
   <% end %>
 
-  <div class="input-field">
-        <i class="material-icons login-icons prefix">description</i>
-        <%= f.label :tagName, "Nombre Tag"%>
-        <%= f.text_field :tagName, :required => true%>
-      </div>
+ 
+
+    <div class="control-group<%= @tag.errors[:tagName].any? ? " error" : "" %>">
+      <i class="material-icons login-icons prefix">description</i>
+    <%= f.label :tagName,  :class => 'control-label' %>
+    <div class="controls">
+	    <%= f.text_field :tagName, :class => 'text_field' %>
+	    <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+	     <span class="help-inline">
+	      <%= @tag.errors[:tagName].any? ? @tag.errors[:tagName].to_s[/\w([^"]*)/] : "" %>
+	     </span>
+     </div>
+  </div>
 
 <% if current_user.isGeneralAdmin %>
     <div class="field">

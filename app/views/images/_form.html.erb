@@ -1,24 +1,31 @@
 <%= form_for(image) do |f| %>
   <% if image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
-
-      <ul>
-      <% image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+      <font color="red" size="1">
   <% end %>
 
-  <div class="field">
-    <%= f.label :imageUrl %>
-    <%= f.text_field :imageUrl %>
+
+
+ <div class="control-group<%= @image.errors[:imageUrl].any? ? " error" : "" %>">
+    <%= f.label :imageUrl,  :class => 'control-label' %>
+    <div class="controls">
+	    <%= f.text_field :imageUrl, :class => 'text_field' %>
+	    <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+	     <span class="help-inline">
+	      <%= @image.errors[:imageUrl].any? ? @image.errors[:imageUrl].to_s[/\w([^"]*)/] : "" %>
+	     </span>
+     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :document_id %>
-    <%= f.text_field :document_id %>
+ 
+ <div class="control-group<%= @image.errors[:document_id].any? ? " error" : "" %>">
+    <%= f.label :document_id,  :class => 'control-label' %>
+    <div class="controls">
+	    <%= f.text_field :document_id, :class => 'text_field' %>
+	    <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+	     <span class="help-inline">
+	      <%= @image.errors[:document_id].any? ? @image.errors[:document_id].to_s[/\w([^"]*)/] : "" %>
+	     </span>
+     </div>
   </div>
 
   <div class="actions">

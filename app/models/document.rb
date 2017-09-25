@@ -6,7 +6,7 @@ class Document < ApplicationRecord
   belongs_to :receiverStatus, :class_name => 'Status', :foreign_key => 'receiverStatus_id'
   has_and_belongs_to_many :tags
   mount_uploader :picture, PictureUploader
-  validates :documentCode, :presence => :true
+  validates :documentCode, :presence => { message: "Debe tener al menos 5 caracteres" }, :length => { :minimum => 5 }
   validates :subject, :presence => :true
   validates :date, :presence => :true
   validates :content, :presence => :true
