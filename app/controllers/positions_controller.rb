@@ -1,6 +1,11 @@
 class PositionsController < ApplicationController
     def index
-        @positions = Position.all
+        @positions_grid = Position.all
+        @positions =initialize_grid(@positions_grid)
+        if params[:search]
+            @post = Position.search(params[:search])
+        else
+        end
     end
 
     def new

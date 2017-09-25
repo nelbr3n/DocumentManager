@@ -1,5 +1,8 @@
-<h5>
-  <strong>Title:</strong>
+<h3>
+  <strong>Titulo:</strong>
   <%= @position.title %>
-</h5>
-<%= link_to 'Back', positions_path %>
+</h3>
+
+<%= link_to positions_path do %>
+  <%= content_tag :button, "Atras", :class => "botonCrear waves-effect waves-light btn" %>
+<% end %>

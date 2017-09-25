@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<div class="title-container">
-  <%if current_user.isGeneralAdmin or current_user.isDepartmentAdmin %>
-    <%= link_to new_tag_path do %>
-      <%= content_tag :button, "Nueva", :class => "botonCrear waves-effect waves-light btn" %>
-    <% end %>
-    <!-- <button class="botonCrear waves-effect waves-light btn"></button> -->
-  <% end %>
-  <h3>Tags</h3>
+<div class="specialdiv">
+
+    <div class="title-container">
+        <%if current_user.isGeneralAdmin or current_user.isDepartmentAdmin %>
+          <%= link_to new_tag_path do %>
+            <%= content_tag :button, "Nuevo", :class => "botonCrear waves-effect waves-light btn" %>
+          <% end %>
+          <!-- <button class="botonCrear waves-effect waves-light btn"></button> -->
+        <% end %>
+        <h3>Tags</h3>
+    </div>
+    
+    <%= grid(@tags) do |g|
+
+        g.column name: 'Nombre'  do |tag|
+            tag.tagName
+        end
+
+        g.column name: 'Departamento'  do |tag|
+            Department.find(tag.department_id).departmentName
+        end
+    
+
+        g.column name: 'Documentos que utilizan el tag' do |tag|
+        link_to('Mostrar', tag)
+        end
+        
+    end -%>
 
 </div>
-<div class="row">
-  <div class="col s12 m8 tagsColumn">
-    
-      <% @tags.each do |tag| %>
-      <div class="card tagsDetail">
-        <p class="p">
-        <%= tag.tagName %> <br>
-        Departamento: <%= Department.find(tag.department_id).departmentName%> <br>
-        </p>
-        <button class="waves-effect waves-light btn btn-small positionRightDown"> <%= link_to 'Mostrar documentos con esta tag', tag %> </button>
-        <!--<%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-      </div>
-      <% end %>
-    
-  </div>
-
-</div>
+<br><br><br>
 
 
