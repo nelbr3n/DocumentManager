@@ -31,7 +31,7 @@
       <div class="input-field col s3">
         <i class="material-icons login-icons prefix">supervisor_account</i>
         <%= f.label :position,"Puesto" %><br />
-        <%= f.text_field :position, autofocus: true %>
+        <%= f.select :position_id, @positions.map{|d| [d.title,d.id]} %>
       </div>
       <div class="input-field col s3">
         <i class="material-icons login-icons prefix">lock</i>

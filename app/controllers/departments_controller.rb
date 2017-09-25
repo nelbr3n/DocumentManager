@@ -28,7 +28,7 @@ class DepartmentsController < ApplicationController
 
     respond_to do |format|
     if @department.save
-        @status = Status.new(description: "Nuevo", department_id: @department.id)
+        @status = Status.new(title: "Nuevo", department_id: @department.id)
         if (@status.save)
           format.html { redirect_to action: "index", notice: 'Department was successfully created.' }
         else

@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets 
 //= require jquery_ujs
+//= require wice_grid
+//= require materialize-sprockets 
 //= require turbolinks
 //= require_tree .
 //= require toastr_rails
@@ -21,9 +22,11 @@ $(document).on('turbolinks:load', function() {
     $(".dropdown-button").dropdown();
     $('select').material_select();
     $('.collapsible').collapsible();
-    $('.datepicker').pickadate({
+    var startpicker = $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        min: new Date(),
+        select: new Date()
     });
 
 });
@@ -48,3 +51,4 @@ toastr.options = {
 $(document).ready(function() {
     $('.carousel').carousel();
 });
+
