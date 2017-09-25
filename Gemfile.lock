@@ -40,7 +40,6 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bcrypt (3.1.11)
-    bcrypt (3.1.11-x86-mingw32)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.3)
@@ -105,8 +104,6 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
-    nokogiri (1.7.1-x86-mingw32)
-      mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     paperclip (5.0.0)
       activemodel (>= 4.2.0)
@@ -170,8 +167,6 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2017.2)
-      tzinfo (>= 1.0.0)
     uglifier (3.1.10)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
@@ -190,7 +185,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   bcrypt
@@ -219,4 +213,4 @@ DEPENDENCIES
   yaml_db
 
 BUNDLED WITH
-   1.14.6
+   1.15.4
