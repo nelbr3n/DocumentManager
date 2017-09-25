@@ -15,4 +15,4 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-/db/development.sqlite3
+*.sqlite3
