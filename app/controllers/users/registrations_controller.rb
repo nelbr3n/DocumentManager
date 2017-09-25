@@ -30,7 +30,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.department_id.to_i
     respond_to do |format|
       if @user.save
-        format.html { redirect_to :controller => "/welcome", :action => "index", notice: 'User was successfully created.Please Sign In' }
+        welcome_email(@user).deliver_later
+        format.html { redirect_to :controller => "/welcome", :action => "index", notice: 'User was successfully created.Please Sign In' }        UserMailer.
         format.json { render :show, status: :created, location: @user }
       else
         @departments = Department.all

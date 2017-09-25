@@ -28,12 +28,143 @@ departments:
     - INFRAESTRUCTURA
     - '2017-07-24 18:27:15.795276'
     - '2017-07-24 18:27:15.795276'
+  - - 3
+    - PROBANDO
+    - '2017-09-15 00:13:12.294311'
+    - '2017-09-15 00:13:12.294311'
+  - - 4
+    - 'PRUEBA DOS '
+    - '2017-09-15 00:15:39.514606'
+    - '2017-09-15 00:15:39.514606'
+
+---
+documents:
+  columns:
+  - id
+  - documentCode
+  - subject
+  - date
+  - content
+  - tags
+  - conversationId
+  - isSenderPrivate
+  - isReceiverPrivate
+  - created_at
+  - updated_at
+  - sender_id
+  - receiver_id
+  - creator_id
+  - senderStatus_id
+  - receiverStatus_id
+  - picture_file_name
+  - picture_content_type
+  - picture_file_size
+  - picture_updated_at
+  - picture
+  records: 
+  - - 1
+    - adsadasd
+    - assad
+    - '2017-09-16'
+    - asestadas
+    - 
+    - 1
+    - true
+    - false
+    - '2017-09-15 00:07:35.441535'
+    - '2017-09-24 17:32:55.193354'
+    - 2
+    - 3
+    - 1
+    - 5
+    - 1
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 2
+    - asdsad
+    - adosadas
+    - '2017-09-15'
+    - adasdasd
+    - 
+    - 2
+    - false
+    - true
+    - '2017-09-15 00:12:27.997859'
+    - '2017-09-15 00:12:27.997859'
+    - 1
+    - 3
+    - 1
+    - 2
+    - 1
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 3
+    - ABC123
+    - asease
+    - '2017-09-14'
+    - assad
+    - 
+    - 3
+    - false
+    - false
+    - '2017-09-15 01:12:20.807304'
+    - '2017-09-15 01:12:20.807304'
+    - 1
+    - 2
+    - 1
+    - 2
+    - 2
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - 4
+    - dasd
+    - dasdasd
+    - '2017-09-28'
+    - dsdasd
+    - 
+    - 1
+    - false
+    - false
+    - '2017-09-24 15:07:25.776021'
+    - '2017-09-24 15:07:25.776021'
+    - 3
+    - 2
+    - 3
+    - 1
+    - 2
+    - 
+    - 
+    - 
+    - 
+    - 
+
+---
+positions:
+  columns:
+  - id
+  - title
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Desarrollador
+    - '2017-09-24 22:32:25.891561'
+    - '2017-09-24 22:32:25.891561'
 
 ---
 statuses:
   columns:
   - id
-  - description
+  - title
   - department_id
   - created_at
   - updated_at
@@ -48,6 +179,21 @@ statuses:
     - 1
     - '2017-07-24 20:05:21.490254'
     - '2017-07-24 20:05:21.490254'
+  - - 3
+    - Nuevo
+    - 3
+    - '2017-09-15 00:13:12.302042'
+    - '2017-09-15 00:13:12.302042'
+  - - 4
+    - Nuevo
+    - 4
+    - '2017-09-15 00:15:39.521231'
+    - '2017-09-15 00:15:39.521231'
+  - - 5
+    - Asignado
+    - 1
+    - '2017-09-24 17:32:42.595721'
+    - '2017-09-24 17:32:42.595721'
 
 ---
 users:
@@ -57,7 +203,6 @@ users:
   - password
   - username
   - department_id
-  - position
   - isGeneralAdmin
   - isDepartmentAdmin
   - created_at
@@ -71,61 +216,100 @@ users:
   - last_sign_in_at
   - current_sign_in_ip
   - last_sign_in_ip
+  - position_id
   records: 
   - - 1
     - superadmin@test.com
     - 
     - Super Admin
     - 1
-    - Test
     - true
     - false
     - '2017-03-28 01:20:41.541464'
-    - '2017-08-01 00:46:43.761502'
-    - "$2a$11$c7UYi2dSYZXWQuUQeVFvcuDPqAcBPBkSn.eyFv7BgQ4480u/fqfRG"
+    - '2017-09-24 23:07:52.503331'
+    - "$2a$11$N6bHmWw4kzBkT6OrPP/Pl.XM6sd0tnyM6QTlNuVXLm1D5wK8F.Q9K"
     - 
     - 
     - 
-    - 8
-    - '2017-08-01 00:46:43.759947'
-    - '2017-07-24 20:03:31.766653'
-    - "::1"
-    - "::1"
+    - 16
+    - '2017-09-24 23:07:52.502216'
+    - '2017-09-24 22:14:03.395073'
+    - 127.0.0.1
+    - 127.0.0.1
+    - 1
   - - 2
     - admin_infor@test.com
     - 
     - Admin informatica
     - 1
-    - Jefe
     - false
     - true
     - '2017-07-24 18:39:23.52005'
-    - '2017-07-24 20:04:11.116641'
-    - "$2a$11$sX5aOyEOWHTJwdUE.ydnPu7EzRwHbtwcwBNNw09qKtusFbAtQlIy2"
+    - '2017-09-24 17:03:39.043494'
+    - "$2a$11$VFPYb7ddgvpWSYtXmiAEgOn8cnPrxf1WwnC0HY/F4TR56QT5U8Qlq"
     - 
     - 
     - 
-    - 5
-    - '2017-07-24 20:04:11.1152'
-    - '2017-07-24 20:03:03.717263'
+    - 7
+    - '2017-09-24 17:03:39.042619'
+    - '2017-08-06 22:33:27.172406'
     - "::1"
     - "::1"
+    - 
   - - 3
     - admin_infra@test.com
     - 
     - Admin infraestructura
     - 2
-    - Jefe
     - false
     - true
     - '2017-07-24 18:40:48.786249'
-    - '2017-07-24 20:03:44.008894'
-    - "$2a$11$FpM1nxMF5DgLkEmsSrPKCutvYUHe.muBjiXhPhbEykH1fFB1PBj82"
+    - '2017-09-24 15:06:33.739253'
+    - "$2a$11$mt5C5e8Z680pREFB8Odifef7/ZqzEMv7bAWIFlXvU/jab0aZwnF66"
+    - 
+    - 
+    - 
+    - 3
+    - '2017-09-24 15:06:33.738015'
+    - '2017-09-15 00:15:15.879350'
+    - "::1"
+    - "::1"
+    - 
+  - - 4
+    - cesar.bonilla@laureate.net
+    - 
+    - cefeboru
+    - 1
+    - false
+    - false
+    - '2017-09-24 22:50:50.458075'
+    - '2017-09-24 22:50:50.458075'
+    - "$2a$11$gSii1FOrNcCGGCe/loif2.5T4spQjpTKSZnw6gwiWHJITfV.O4dri"
+    - 
+    - 
+    - 
+    - 0
+    - 
     - 
     - 
     - 
     - 1
-    - '2017-07-24 18:40:59.416372'
-    - '2017-07-24 18:40:59.416372'
-    - "::1"
-    - "::1"
+  - - 5
+    - cefeboru@gmail.com
+    - 
+    - cefeboru
+    - 1
+    - false
+    - false
+    - '2017-09-24 22:52:18.139394'
+    - '2017-09-24 22:52:18.139394'
+    - "$2a$11$W37XL6Z7/qqvS22ytXKyq.3fhbSe5qHdzHqqB680ZzwiTnyz62i8W"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 1

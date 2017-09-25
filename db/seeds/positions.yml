@@ -1,0 +1,13 @@
+
+---
+positions:
+  columns:
+  - id
+  - title
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Desarrollador
+    - '2017-09-24 22:32:25.891561'
+    - '2017-09-24 22:32:25.891561'

@@ -1,0 +1,119 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - password
+  - username
+  - department_id
+  - isGeneralAdmin
+  - isDepartmentAdmin
+  - created_at
+  - updated_at
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - position_id
+  records: 
+  - - 1
+    - superadmin@test.com
+    - 
+    - Super Admin
+    - 1
+    - true
+    - false
+    - '2017-03-28 01:20:41.541464'
+    - '2017-09-24 23:07:52.503331'
+    - "$2a$11$N6bHmWw4kzBkT6OrPP/Pl.XM6sd0tnyM6QTlNuVXLm1D5wK8F.Q9K"
+    - 
+    - 
+    - 
+    - 16
+    - '2017-09-24 23:07:52.502216'
+    - '2017-09-24 22:14:03.395073'
+    - 127.0.0.1
+    - 127.0.0.1
+    - 1
+  - - 2
+    - admin_infor@test.com
+    - 
+    - Admin informatica
+    - 1
+    - false
+    - true
+    - '2017-07-24 18:39:23.52005'
+    - '2017-09-24 17:03:39.043494'
+    - "$2a$11$VFPYb7ddgvpWSYtXmiAEgOn8cnPrxf1WwnC0HY/F4TR56QT5U8Qlq"
+    - 
+    - 
+    - 
+    - 7
+    - '2017-09-24 17:03:39.042619'
+    - '2017-08-06 22:33:27.172406'
+    - "::1"
+    - "::1"
+    - 
+  - - 3
+    - admin_infra@test.com
+    - 
+    - Admin infraestructura
+    - 2
+    - false
+    - true
+    - '2017-07-24 18:40:48.786249'
+    - '2017-09-24 15:06:33.739253'
+    - "$2a$11$mt5C5e8Z680pREFB8Odifef7/ZqzEMv7bAWIFlXvU/jab0aZwnF66"
+    - 
+    - 
+    - 
+    - 3
+    - '2017-09-24 15:06:33.738015'
+    - '2017-09-15 00:15:15.879350'
+    - "::1"
+    - "::1"
+    - 
+  - - 4
+    - cesar.bonilla@laureate.net
+    - 
+    - cefeboru
+    - 1
+    - true
+    - false
+    - '2017-09-24 22:50:50.458075'
+    - '2017-09-24 22:50:50.458075'
+    - "$2a$11$gSii1FOrNcCGGCe/loif2.5T4spQjpTKSZnw6gwiWHJITfV.O4dri"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 1
+  - - 5
+    - cefeboru@gmail.com
+    - 
+    - cefeboru
+    - 1
+    - true
+    - false
+    - '2017-09-24 22:52:18.139394'
+    - '2017-09-24 22:52:18.139394'
+    - "$2a$11$W37XL6Z7/qqvS22ytXKyq.3fhbSe5qHdzHqqB680ZzwiTnyz62i8W"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 1
