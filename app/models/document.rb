@@ -22,4 +22,8 @@ class Document < ApplicationRecord
   has_many :archives
   attr_accessor :archive_data
 
+  def self.search(search)
+    where("subject LIKE ?", "%#{search}%")
+  end
+
 end

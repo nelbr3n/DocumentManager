@@ -4,6 +4,17 @@
 
 <h3><%= current_user.department.departmentName.capitalize %> Documents</h3>
 
+<%= form_tag(documents_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Buscar por subject" %>
+<%= submit_tag "Buscar" %>
+<% end %>
+
+<% if @post.present? %>
+  <%= render @post %>
+<% else %>
+  <p>No se encontro algun documento con el subject <%= params[:search] %>.</p>
+<% end %>
+
 <%= grid(@documents) do |g|
 
   g.column name: 'Document Code'  do |document|

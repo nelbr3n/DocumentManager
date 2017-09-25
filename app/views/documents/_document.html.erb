@@ -1,0 +1,158 @@
+<% @post.each do |document| %>
+<div class="title-container">
+  <h3>Documento <%= document.documentCode %></h3>
+</div>
+<div class="row">
+<div class="col s12 m11 documentColumn">
+<div class="card documentDetail">
+<div class="col s12 m4 l4">
+  <h5>Remitente <i class="material-icons login-icons prefix">contact_mail</i></h5>
+  <p>
+    <strong class="documentLabel">Nombre:</strong>
+    <%= document.sender.username %>
+  </p>
+  <p>
+    <strong class="documentLabel">Correo:</strong>
+    <%= document.sender.email %>
+  </p>
+  <p>
+    <strong class="documentLabel">Departamento:</strong>
+    <%= document.sender.department.departmentName %>
+  </p>
+</div>
+<div class="col s12 m4 l4">
+<h5>Destinatario <i class="material-icons login-icons prefix">contact_mail</i></h5>
+  <p>
+    <strong class="documentLabel">Nombre:</strong>
+    <%= document.receiver.username %>
+  </p>
+  <p>
+    <strong class="documentLabel">Correo:</strong>
+    <%= document.receiver.email %>
+  </p>
+  <p>
+    <strong class="documentLabel">Departamento:</strong>
+    <%= document.receiver.department.departmentName %>
+  </p>
+</div>
+<div class="col s12 m4 l4">
+<h5>Creador <i class="material-icons login-icons prefix">face</i></h5>
+  <p>
+    <strong class="documentLabel">Nombre:</strong>
+    <%= document.creator.username %>
+  </p>
+  <p>
+    <strong class="documentLabel">Correo:</strong>
+    <%= document.creator.email %>
+  </p>
+  <p>
+    <strong class="documentLabel">Departamento:</strong>
+    <%= document.creator.department.departmentName %>
+  </p>
+</div>
+<div class="col s12 m4 l6">
+<h5>Contenido <i class="material-icons login-icons prefix">drafts</i></h5>
+  <p>
+    <strong class="documentLabel">Fecha:</strong>
+    <%= document.date %>
+  </p>
+  <p>
+    <strong class="documentLabel">Asunto:</strong>
+    <%= document.subject %>
+  </p>
+  <p>
+    <strong class="documentLabel">Contenido:</strong>
+    <%= document.content %>
+  </p>
+  <p>
+    <strong class="documentLabel">Tags:</strong>
+    </br>
+    <% a = document.tag_ids %>
+    <% for item in a %>
+      <% Tag.all.each do |tag| %>
+        <% if tag.id == item %>
+          <%= tag.tagName %><br/>
+        <% end %>
+      <% end %>
+    <% end %>
+  </p>
+
+</div>
+<div class="col s12 m4 l6">
+  <h5>Estados <i class="material-icons login-icons prefix">info_outline</i></h5>
+  <% if @canUpdateSenderStatus %>
+    <%= form_for(document) do |f| %>
+    <table>
+        <tr>
+          <td>
+            <div class="input-field showInput">
+              <label for="senderStatus">Estado remitente:</label>
+              <br>
+              <%=f.select :senderStatus_id, @statusesSender.map{|s| [s.description,s.id]}%>
+            </div>
+          </td>
+          <td>
+            <div class="actions">
+              <%= button_tag( :class => "waves-effect waves-light btn") do %>
+                Modificar <i class="material-icons right">send</i>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  <% else %>
+  <% end %>
+  <% if @canUpdateReceiverStatus %>
+    <%= form_for(document) do |f| %>
+      <table>
+        <tr>
+          <td>
+            <div class="input-field showInput ">
+              <label for="senderStatus">Estado destinatario:</label>
+              <br>
+              <%=f.select :receiverStatus_id, @statusesReceiver.map{|s| [s.description,s.id]}%>
+            </div>
+          </td>
+          <td>
+            <div class="actions">
+            <%= button_tag( :class => "waves-effect waves-light btn") do %>
+              Modificar <i class="material-icons right">send</i>
+            <% end %>
+          </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  <% else %>
+  <% end %>
+
+  <p>
+    <strong class="documentLabel">Privado para emisor:</strong>
+    <%= document.isSenderPrivate %>
+  </p>
+
+  <p>
+    <strong class="documentLabel">Privado para receptor:</strong>
+    <%= document.isReceiverPrivate %>
+  </p>
+  <p>
+    <div class="carousel">
+      <% docID = document.id %>
+      <% Archive.all.each do |file| %>
+        <% if file.document_id == docID %>
+          <a class="carousel-item"><%= image_tag file.archive %><br/></a>
+        <% end %>
+      <% end %>
+    </div>
+  </p>
+
+
+</div>
+  <%= link_to 'Back', documents_path %>
+
+</div>
+</div>
+</div>
+
+<% end %>

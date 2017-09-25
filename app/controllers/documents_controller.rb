@@ -7,6 +7,10 @@ class DocumentsController < ApplicationController
     @users = User.where("department_id = ?", current_user.department_id).pluck(:id)
     @documents_grid = Document.where("receiver_id = ? OR sender_id = ? OR (receiver_id = ? AND isReceiverPrivate = ?)", current_user.id, current_user.id,@user,false)
     @documents =initialize_grid(@documents_grid)
+    if params[:search]
+      @post = Document.search(params[:search])
+    else
+    end
   end
 
   # GET /documents/1
