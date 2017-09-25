@@ -16,6 +16,7 @@
 * cd DocumentManager
 * Required packages: "./install_packages.bash"
 * Required Gems "bundle install"
+* Init db with "rake db:setup"
 * Run it: "rails s"
 
 
