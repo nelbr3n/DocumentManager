@@ -23,3 +23,16 @@
 
   </div>
 </div>
+
+ <div class="row">
+   <%= grid(@tags_grid) do |g|
+  		  
+   g.column do |tag|
+     tag.tagName
+   end
+ 
+   g.column do |tag|
+     tag.department_id
+   end
+ end -%>
+</div>
