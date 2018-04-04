@@ -6,8 +6,8 @@ test_model() {
   [ "$?" != "0" ] && exit
 }
 
-#test_model department 
-test_model tag
-#test_model user
-#test_model status
-#test_model document
+test_model department 
+test_model document
+#test_model tag
+test_model user
+test_model status
