@@ -75,3 +75,9 @@ class TagsController < ApplicationController
       params.require(:tag).permit(:tagName, :department_id)
     end
 end
+
+=begin
+	TODO agregar filtros
+	     paginación doble
+	     titulos
+=end
