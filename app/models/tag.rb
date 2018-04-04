@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  belongs_to_many :documents
+  belongs_to :documents
   belongs_to :department
   validates :tagName, presence: true, allow_blank: false
   validates :department_id, presence: true
