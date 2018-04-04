@@ -1,9 +1,5 @@
 class Tag < ApplicationRecord
-<<<<<<< HEAD
   belongs_to :documents
-=======
-##  belongs_to_many :documents
->>>>>>> b18d2784d96aa9818ae0df7d50abfda6bb272bd3
   belongs_to :department
   validates :tagName, presence: true, allow_blank: false
   validates :department_id, presence: true
