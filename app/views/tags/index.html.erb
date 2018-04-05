@@ -24,15 +24,16 @@
   </div>
 </div>
 
- <div class="row">
+<div class="row">
    <%= grid(@tags_grid) do |g|
   		  
-   g.column do |tag|
+   g.column name: 'Nombre de Tag' do |tag|
      tag.tagName
    end
  
-   g.column do |tag|
-     tag.department_id
+   g.column name: 'Departamento' do |tag|
+     tag.department.departmentName
    end
+
  end -%>
 </div>
