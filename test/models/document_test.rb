@@ -4,7 +4,22 @@ class DocumentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-
+  
+=begin
+  TODO
+  Implementar mas pruebas:
+    Cambiar el Modelo para que no acepte ningún elemento vacio.
+    Campos con espacios
+    Campos numericos (e.g. id) no sean string
+    Id del emisor no sea igual al del receptor
+    Boolean no permita string o numerico
+    La cantidad de parametros sea correctos
+    Utilizar el metodo document_params para verificar los parametros (en la prueba de creación)
+  Implementar mas pruebas para los demas modelos
+  Crear el modelo ER de la base de datos para reimplementar.
+  Optimizar metodos (Reimplementarlos de manera que sean Ruby friendly).
+=end
+  
   test "documentCreate_nil_code" do
     Department.new(departmentName: "Test").save
     Tag.new(tagName: "Test", department_id: Department.all.first.id).save
