@@ -5,6 +5,11 @@ class DocumentTest < ActiveSupport::TestCase
   #   assert true
   # end
 
+  # TODO
+  # Implementar mas pruebas para todos los modelos
+  # Crear el modelo ER de la base de datos para reimplementar
+  # Optimizar metodos (Reimplementarlos de manera que sean Ruby friendly)
+  
   test "documentCreate_nil_code" do
     Department.new(departmentName: "Test").save
     Tag.new(tagName: "Test", department_id: Department.all.first.id).save
