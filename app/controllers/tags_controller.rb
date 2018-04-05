@@ -79,5 +79,4 @@ end
 =begin
 	TODO agregar filtros
 	     paginación doble
-	     titulos
 =end
